@@ -1,0 +1,24 @@
+---
+- name: Copy Nginx configuration
+  template:
+    src: react-nginx.j2
+    dest: /etc/nginx/sites-available/react
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Enable Nginx configuration
+  file:
+    src: /etc/nginx/sites-available/react
+    dest: /etc/nginx/sites-enabled/react
+    state: link
+
+- name: Remove default Nginx site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Restart Nginx
+  service:
+    name: nginx
+    state: restarted

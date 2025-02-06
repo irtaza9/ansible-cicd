@@ -1,0 +1,5 @@
+---
+- name: Setup React App
+  hosts: react_servers
+  roles:
+    - react

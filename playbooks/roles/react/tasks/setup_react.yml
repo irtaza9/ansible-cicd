@@ -1,0 +1,21 @@
+---
+- name: Create React app directory
+  file:
+    path: /var/www/react-app
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: Initialize a new React app
+  command: npx create-react-app /var/www/react-app
+  args:
+    creates: /var/www/react-app/package.json
+
+- name: Set permissions for React app directory
+  file:
+    path: /var/www/react-app
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'

@@ -1,0 +1,17 @@
+---
+- name: Update and upgrade system packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install Node.js and npm
+  apt:
+    name: 
+      - nodejs
+      - npm
+    state: present
+
+- name: Install Yarn
+  npm:
+    name: yarn
+    global: yes

@@ -1,0 +1,11 @@
+---
+galaxy_info:
+  author: Your Name
+  description: Role for setting up a React app environment
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+dependencies: []
